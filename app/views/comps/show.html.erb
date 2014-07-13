@@ -1,34 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Comp -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @comp.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @comp.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
+  <dd><%= @comp.date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @comp.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @comp.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @comp.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><%= @comp.category %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @comp.price %></dd>
+</dl>
 
-<p>
-  <strong>Date:</strong>
-  <%= @comp.date %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @comp.address %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @comp.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @comp.state %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @comp.price %>
-</p>
-
-<%= link_to 'Edit', edit_comp_path(@comp) %> |
-<%= link_to 'Back', comps_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              comps_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_comp_path(@comp), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              comp_path(@comp),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

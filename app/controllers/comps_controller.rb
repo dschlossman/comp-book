@@ -69,6 +69,6 @@ class CompsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comp_params
-      params.require(:comp).permit(:name, :date, :address, :city, :state, :price)
+      params.require(:comp).permit(:name, :date, :address, :city, :state, :price, :category)
     end
 end
