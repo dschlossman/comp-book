@@ -10,6 +10,7 @@ class CompsController < ApplicationController
   # GET /comps/1
   # GET /comps/1.json
   def show
+    @reports = Report.all
   end
 
   # GET /comps/new
@@ -40,6 +41,7 @@ class CompsController < ApplicationController
   # PATCH/PUT /comps/1
   # PATCH/PUT /comps/1.json
   def update
+    @comp.attributes = {'report_ids' => []}.merge(params[:comp] || {})
     respond_to do |format|
       if @comp.update(comp_params)
         format.html { redirect_to @comp, notice: 'Comp was successfully updated.' }
@@ -69,6 +71,6 @@ class CompsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comp_params
-      params.require(:comp).permit(:name, :date, :address, :city, :state, :price, :category)
+      params.require(:comp).permit(:name, :date, :address, :city, :state, :price, :category, :report_ids => [])
     end
 end

@@ -41,7 +41,14 @@
       <%= f.text_field :price, :class => 'text_field' %>
     </div>
   </div>
-
+   <div class="control-group">
+    <% Report.all.each do |report| -%>
+    <div class="controls">
+      <%= check_box_tag :report_ids, report.id, @comp.reports.include?(report), :name => 'comp[report_ids][]' -%>
+      <%= report.name -%>
+    </div>
+    <% end %>
+  </div>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

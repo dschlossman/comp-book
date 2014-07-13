@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reports
+
   resources :comps
   root 'comps#index'
 

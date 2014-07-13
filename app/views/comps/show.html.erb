@@ -19,6 +19,12 @@
   <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
   <dd><%= @comp.price %></dd>
 </dl>
+<ul>
+   This Comp is included in the following reports:
+<% @comp.reports.each do |report| %>
+ <li><%= report.name %> </li>
+<% end %>
+</ul>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

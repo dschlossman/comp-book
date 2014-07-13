@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140713211834) do
+ActiveRecord::Schema.define(version: 20140713214559) do
+
+  create_table "compilations", force: true do |t|
+    t.integer  "report_id"
+    t.integer  "comp_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comps", force: true do |t|
     t.string   "name"
@@ -23,6 +31,13 @@ ActiveRecord::Schema.define(version: 20140713211834) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
+  end
+
+  create_table "reports", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
