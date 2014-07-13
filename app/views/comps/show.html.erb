@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @comp.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @comp.date %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @comp.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @comp.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @comp.state %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @comp.price %>
+</p>
+
+<%= link_to 'Edit', edit_comp_path(@comp) %> |
+<%= link_to 'Back', comps_path %>
