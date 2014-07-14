@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= nav_bar :fixed => :top, :brand => "Comp-Book" do %>
+    <%= menu_group do %>
+        <%= menu_item "Home", root_path %>
+        <%= menu_item "About", pages_about_path %>
+        <%= menu_item "Contact", pages_contact_path %>
+        <%= menu_item "View Comps", comps_path %>
+       	<%= drop_down "Reports" do %>
+       		<%= menu_item "View Reports", reports_path %>
+       		<%= drop_down_divider %>
+       		<%= menu_item "Generate Report", new_report_path %>
+       	<% end %>
+        
+     <% end %>
+
+<% end %>
 
 <%= yield %>
 
 </body>
 </html>
+

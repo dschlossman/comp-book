@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:date) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
@@ -20,8 +19,7 @@
   <tbody>
     <% @comps.each do |comp| %>
       <tr>
-        <td><%= link_to comp.id, comp_path(comp) %></td>
-        <td><%= comp.name %></td>
+        <td><%= link_to comp.name, comp_path(comp) %></td>
         <td><%= comp.date %></td>
         <td><%= comp.address %></td>
         <td><%= comp.city %></td>
