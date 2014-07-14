@@ -12,7 +12,7 @@
       <th><%= model_class.human_attribute_name(:state) %></th>
       <th><%= model_class.human_attribute_name(:category) %></th>
       <th><%= model_class.human_attribute_name(:price) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name("Building Size (SF)") %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,7 +26,7 @@
         <td><%= comp.state %></td>
         <td><%= comp.category %></td>
         <td><%= comp.price %></td>
-        <td><%=l comp.created_at %></td>
+        <td><%= comp.building_size %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_comp_path(comp), :class => 'btn btn-mini' %>

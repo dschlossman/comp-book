@@ -35,12 +35,20 @@
       <%= f.text_field :category, :class => 'text_field' %>
     </div>
   </div>
+
+    <div class="control-group">
+    <%= f.label "Building Size", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :building_size, :class => 'text_field' %>
+    </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :price, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :price, :class => 'text_field' %>
     </div>
-  </div>
+   </br><h3> Add comp to a report: </h3>
    <div class="control-group">
     <% Report.all.each do |report| -%>
     <div class="controls">
