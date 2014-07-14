@@ -11,18 +11,29 @@
 </dl>
 
 <table class="table">
+  <thead>
   <tr>
     <td><strong>Property Name </strong></td>
     <td><strong>Sale Date </strong></td>
     <td><strong>Price</strong></td>
   </tr>
-  <% @report.comps.each do |comp| %>
-  <tr>
-    <td> <%= comp.name %> </td>
-    <td> <%= comp.date %> </td>
-    <td> <%= comp.price %> </td>
-  </tr>
-  <% end %>
+</thead>
+  <tbody>
+    <% @report.comps.each do |comp| %>
+    <tr>
+      <td> <%= comp.name %> </td>
+      <td> <%= comp.date %> </td>
+      <td> <%= comp.price %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+     <tr>
+        <td> <strong>Average </strong> </td>
+        <td> --- </td>
+        <td> <strong> <%= @average %> </strong> </td>
+     </tr>
+  </tfoot>
 </table>
 
 <div class="form-actions">
