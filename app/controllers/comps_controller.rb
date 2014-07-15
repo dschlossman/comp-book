@@ -42,7 +42,8 @@ class CompsController < ApplicationController
   # PATCH/PUT /comps/1
   # PATCH/PUT /comps/1.json
   def update
-    @comp.attributes = {'report_ids' => []}.merge(params[:comp] || {})
+    #the line below is used to update the report when all are comps are removed. 
+    #@comp.attributes = {'report_ids' => []}.merge(params[:comp] || {})
     respond_to do |format|
       if @comp.update(comp_params)
         format.html { redirect_to @comp, notice: 'Comp was successfully updated.' }

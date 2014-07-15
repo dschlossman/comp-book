@@ -25,6 +25,7 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    @comps = Comp.all
   end
 
   # GET /reports/1/edit
@@ -50,6 +51,7 @@ class ReportsController < ApplicationController
   # PATCH/PUT /reports/1
   # PATCH/PUT /reports/1.json
   def update
+    @report.attributes = {'comp_ids' => []}.merge(params[:report] || {})
     respond_to do |format|
       if @report.update(report_params)
         format.html { redirect_to @report, notice: 'Report was successfully updated.' }
@@ -75,10 +77,11 @@ class ReportsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_report
       @report = Report.find(params[:id])
+      @comps = Comp.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
-      params.require(:report).permit(:name, :description)
+      params.require(:report).permit(:name, :description, :comp_ids => [])
     end
 end

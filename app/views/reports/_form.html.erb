@@ -11,6 +11,14 @@
       <%= f.text_field :description, :class => 'text_field' %>
     </div>
   </div>
+  <div class="control-group">
+  <% @comps.each do |comp| %>
+      <li>
+        <%= check_box_tag :comp_ids, comp.id, @report.comps.include?(comp), :name => 'report[comp_ids][]' -%>
+        <%= h comp.name -%>
+      </li>
+  <% end %>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

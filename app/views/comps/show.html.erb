@@ -19,7 +19,7 @@
   <dt><strong><%= model_class.human_attribute_name(:building_size) %>:</strong></dt>
   <dd><%= @comp.building_size %></dd>
   <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= @comp.price %></dd>
+  <dd><%= number_to_currency(@comp.price) %></dd>
 </dl>
 <ul>
    This Comp is included in the following reports:

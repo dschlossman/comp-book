@@ -25,7 +25,7 @@
         <td><%= comp.city %></td>
         <td><%= comp.state %></td>
         <td><%= comp.category %></td>
-        <td><%= comp.price %></td>
+        <td><%= number_to_currency(comp.price) %></td>
         <td><%= comp.building_size %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
