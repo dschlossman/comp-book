@@ -15,7 +15,9 @@
   <tr>
     <td><strong>Property Name </strong></td>
     <td><strong>Sale Date </strong></td>
+    <td><strong>Building Size</strong></td>
     <td><strong>Price</strong></td>
+    <td><strong>Price Per Square Foot</strong></td>
   </tr>
 </thead>
   <tbody>
@@ -25,6 +27,7 @@
       <td> <%= comp.date %> </td>
       <td> <%= comp.building_size %> </td>
       <td> <%= comp.price %> </td>
+      <td> <%= number_to_currency(comp.price_psf_building) %> </td>
     </tr>
     <% end %>
   </tbody>
@@ -32,7 +35,9 @@
      <tr>
         <td> <strong>Average </strong> </td>
         <td> --- </td>
-        <td> <strong> <%= @average %> </strong> </td>
+        <td> --- </td>
+        <td> <strong> <%= number_to_currency(@average_price) %> </strong> </td>
+        <td> <strong> <%= number_to_currency(@average_price_per_SF) %> </strong> </td>
      </tr>
   </tfoot>
 </table>

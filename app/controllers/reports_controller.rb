@@ -10,7 +10,16 @@ class ReportsController < ApplicationController
   # GET /reports/1
   # GET /reports/1.json
   def show
-    @average = "calculated avg"
+    add=0
+    x=0
+    this_report = Report.find(params[:id])
+     for comp in this_report.comps.all
+      add += comp.price
+      x += comp.price_psf_building
+     end
+     total=this_report.comps.count
+     @average_price = add/total
+     @average_price_per_SF = x/total
   end
 
   # GET /reports/new

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715014137) do
+ActiveRecord::Schema.define(version: 20140715031843) do
 
   create_table "compilations", force: true do |t|
     t.integer  "report_id"
@@ -27,11 +27,12 @@ ActiveRecord::Schema.define(version: 20140715014137) do
     t.string   "address"
     t.string   "city"
     t.string   "state"
-    t.integer  "price"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
     t.integer  "building_size"
+    t.decimal  "price_psf_building"
   end
 
   create_table "reports", force: true do |t|

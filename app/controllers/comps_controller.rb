@@ -1,5 +1,6 @@
 class CompsController < ApplicationController
   before_action :set_comp, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /comps
   # GET /comps.json
@@ -68,6 +69,7 @@ class CompsController < ApplicationController
     def set_comp
       @comp = Comp.find(params[:id])
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comp_params
