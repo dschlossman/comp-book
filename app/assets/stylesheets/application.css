@@ -16,3 +16,11 @@
 body {
 	padding-top: 60px;
 }
+
+@media print {
+ .navbar {
+        display: none;
+    }
+
+
+ }

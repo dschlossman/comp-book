@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CompBook</title>
+  <title>Comp Database</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= nav_bar :fixed => :top, :brand => "Comp-Book" do %>
+<%= nav_bar :fixed => :top, :brand => "Comp Database" do %>
     <%= menu_group do %>
         <%= menu_item "Home", root_path %>
         <%= menu_item "About", pages_about_path %>
@@ -29,8 +29,11 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 <% end %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <div class="alert alert-info">
+        <a class="close" data-dismiss="alert">×</a>
+        <strong><%= notice %></strong> <%= alert %>
+    </div>
+
 
 <%= yield %>
 
