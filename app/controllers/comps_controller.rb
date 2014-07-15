@@ -1,5 +1,6 @@
 class CompsController < ApplicationController
   before_action :set_comp, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
   
 
   # GET /comps
