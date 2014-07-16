@@ -47,7 +47,10 @@
     <%= f.label :price, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :price, :class => 'text_field' %>
-    </div>
+  </div>
+
+  <%= f.file_field :property_photo %>
+
    </br><h3> Add comp to a report: </h3>
    <div class="control-group">
     <% Report.all.each do |report| -%>

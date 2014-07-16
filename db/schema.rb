@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715031843) do
+ActiveRecord::Schema.define(version: 20140716051839) do
 
   create_table "compilations", force: true do |t|
     t.integer  "report_id"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 20140715031843) do
     t.string   "category"
     t.integer  "building_size"
     t.decimal  "price_psf_building"
+    t.string   "property_photo_file_name"
+    t.string   "property_photo_content_type"
+    t.integer  "property_photo_file_size"
+    t.datetime "property_photo_updated_at"
   end
 
   create_table "reports", force: true do |t|

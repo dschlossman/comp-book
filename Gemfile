@@ -9,6 +9,8 @@ gem 'devise'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem 'paperclip' #for adding photos to comps
+gem 'aws-sdk' #for storing the photos
 # Use sqlite3 as the database for Active Record
 group :development do
 gem 'sqlite3'
