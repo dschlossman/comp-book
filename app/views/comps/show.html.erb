@@ -1,34 +1,54 @@
 <%- model_class = Comp -%>
 
-<div>
-<address>
-  <strong> <%= @comp.name %> </strong><br>
-  <%= @comp.address %><br>
-  <%= @comp.city %>, <%= @comp.state %> <br>
-  <abbr title="Phone">P:</abbr> (123) 456-7890
-</address>
-</div>
+  <div class="row-fluid">
+  <div class="span12">   
+    <div class="holder">
+  <h2 class="comp-name"><%= @comp.name %></h1>
+    <p><%= image_tag @comp.property_photo.url(:medium) %></p> 
+    <p> <%= @comp.address %> <%= @comp.city %>, <%= @comp.state %></p>
+  </div>
+  </div>
+  </div>
+
+            
+
+<table class="table table-striped">
+
+<tr>
+  <td class="col-md-3"><strong> Purchase Price: </strong> </td>
+  <td class="col-md-3"><%= number_to_currency(@comp.price) %> </td>
+  <td class="col-md-3"><strong> Sale date: </strong> </td>
+  <td class="col-md-3"><%= @comp.date %> </td>
+</tr>
+
+<tr>
+  <td class="col-md-3"><strong> Lot Size: </strong> </td>
+  <td class="col-md-3"> [TODO: Create attribute] </td>
+  <td class="col-md-3"><strong> Seller: </strong> </td>
+  <td class="col-md-3"> [TODO: Create attribute] </td>
+</tr>
+
+<tr>
+  <td class="col-md-3"><strong> Building Size: </strong> </td>
+  <td class="col-md-3"><%= @comp.building_size.to_i %> square feet </td>
+  <td class="col-md-3"><strong> Buyer: </strong> </td>
+  <td class="col-md-3"><%= @comp.date %> </td>
+</tr>
+
+<tr>
+  <td class="col-md-3"><strong> Purchase Price: </strong> </td>
+  <td class="col-md-3"><%= number_to_currency(@comp.price) %> </td>
+  <td class="col-md-3"><strong> Verified By: </strong> </td>
+  <td class="col-md-3"><%= @comp.date %> </td>
+</tr>
 
 
-<div class="center"><%= image_tag @comp.property_photo.url(:medium) %></div>
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @comp.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
-  <dd><%= @comp.date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-  <dd><%= @comp.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
-  <dd><%= @comp.city %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
-  <dd><%= @comp.state %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
-  <dd><%= @comp.category %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:building_size) %>:</strong></dt>
-  <dd><%= @comp.building_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
-  <dd><%= number_to_currency(@comp.price) %></dd>
-</dl>
+</table>
+
+<div class="container-fluid">
+  
+
+
 <ul>
    This Comp is included in the following reports:
 <% @comp.reports.each do |report| %>

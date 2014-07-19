@@ -8,7 +8,7 @@ before_save :calculate_price_psf
   :styles => {
     thumb: '100x100>',
     square: '200x200#',
-    medium: '300x300>'
+    medium: '400x400>'
   }
 
 
