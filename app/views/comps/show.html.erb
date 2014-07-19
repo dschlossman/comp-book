@@ -1,7 +1,15 @@
 <%- model_class = Comp -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+
+<div>
+<address>
+  <strong> <%= @comp.name %> </strong><br>
+  <%= @comp.address %><br>
+  <%= @comp.city %>, <%= @comp.state %> <br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
 </div>
+
+
 <div class="center"><%= image_tag @comp.property_photo.url(:medium) %></div>
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
