@@ -23,7 +23,7 @@
   <tbody>
     <% @report.comps.each do |comp| %>
     <tr>
-      <td> <%= comp.name %> </td>
+      <td> <%= link_to comp.name, comp_path(comp) %> </td>
       <td> <%= comp.date %> </td>
       <td> <%= comp.building_size %> </td>
       <td> <%= comp.price %> </td>

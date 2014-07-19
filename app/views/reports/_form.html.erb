@@ -12,11 +12,13 @@
     </div>
   </div>
   <div class="control-group">
+  <% unless @comps == nil %>
   <% @comps.each do |comp| %>
       <li>
         <%= check_box_tag :comp_ids, comp.id, @report.comps.include?(comp), :name => 'report[comp_ids][]' -%>
         <%= h comp.name -%>
       </li>
+  <% end %>
   <% end %>
   </div>
 

@@ -29,10 +29,12 @@
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 <% end %>
+<% if notice.present? %>
     <div class="alert alert-info">
         <a class="close" data-dismiss="alert">×</a>
         <strong><%= notice %></strong> <%= alert %>
     </div>
+<% end %>
 
 
 <%= yield %>

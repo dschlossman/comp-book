@@ -4,7 +4,7 @@
   <div class="span12">   
     <div class="holder">
   <h2 class="comp-name"><%= @comp.name %></h1>
-    <p><%= image_tag @comp.property_photo.url(:medium) %></p> 
+    <% if @comp.property_photo.present? %> <p><%= image_tag @comp.property_photo.url(:medium) %></p> <% end %>
     <p> <%= @comp.address %> <%= @comp.city %>, <%= @comp.state %></p>
   </div>
   </div>
@@ -58,7 +58,7 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              comps_path, :class => 'btn'  %>
+              :back, :class => 'btn'  %>
   <% if user_signed_in? %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_comp_path(@comp), :class => 'btn' %>
