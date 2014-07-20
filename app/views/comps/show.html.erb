@@ -52,7 +52,7 @@
 <ul>
    This Comp is included in the following reports:
 <% @comp.reports.each do |report| %>
- <li><%= report.name %> </li>
+ <li><%= link_to report.name, report_path(report) %> </li>
 <% end %>
 </ul>
 
